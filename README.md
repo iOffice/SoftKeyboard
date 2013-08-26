@@ -1,4 +1,4 @@
-#iOS SoftKeyboard
+#iOS SoftKeyboard Cordova Plugin
 
 Quick and dirty Cordova 3.0 plugin for iOS SoftKeyboard events
 
