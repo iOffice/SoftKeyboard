@@ -1,8 +1,16 @@
 #iOS SoftKeyboard
 
-Quick and Dirty Cordova 3.0 plugin for iOS SoftKeyboard events
+Quick and dirty Cordova 3.0 plugin for iOS SoftKeyboard events
 
 For those looking for a quick and dirty solution to get keyboard show/hide events add the code in src/ios to your XCode project and add www/SoftKeyboard.js  to your www project.
+
+Add the plugin to config.xml
+```
+    <feature name="KeyboardPlugin">
+        <param name="ios-package" value="KeyboardPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+```
 
 This will add two new events 
 ```
