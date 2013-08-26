@@ -2,7 +2,7 @@
 
 Quick and dirty Cordova 3.0 plugin for iOS SoftKeyboard events
 
-For those looking for a quick and dirty solution to get keyboard show/hide events add the code in src/ios to your XCode project and add www/SoftKeyboard.js  to your www project.
+For those looking for a simple  solution to get keyboard show/hide events add the code in src/ios to your XCode project and add www/SoftKeyboard.js  to your www project.
 
 Add the plugin to config.xml
 ```
@@ -14,10 +14,14 @@ Add the plugin to config.xml
 
 This will add two new events 
 ```
-window.addEventListener('showKeyboard', function(size) { ... };
-window.addEventLisener('hideKeyboard', function() {...};
+window.addEventListener('showKeyboard', function(size) { ... });
+window.addEventLisener('hideKeyboard', function() {...});
 ```
-
+Additionally you can check the status through
+```
+window.keyboard.visible
+window.keyboard.size //will be {width:0,height:0} if not visible
+```
 ##TODO
 * Cleanup
 * Android (probably more important than IOS, can probably leverage old code from phonegap-plugins repo)
