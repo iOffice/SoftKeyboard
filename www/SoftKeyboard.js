@@ -27,14 +27,22 @@ var SoftKeyboard = function () {
 	//register listeners for keyboard event
 	cordova.exec(SoftKeyboard.onKeyboardChange, err, "KeyboardPlugin", "start", []);
 };
+
+SoftKeyboard.visible = false;
+SoftKeyboard.size = {width: 0, height: 0};
 SoftKeyboard.onKeyboardChange = function (result) {
-	alert(result);
-	console.log(result);
 	var type = result.type;
+	SoftKeyboard.visible = type == 'showKeyboard';
+	if (SoftKeyboard.visible) {
+		SoftKeyboard.size = result.size;
+	} else {
+		SoftKeyboard.size = {width: 0, height: 0};
+	}
 	cordova.fireWindowEvent(type, result.size);
 };
 
-$(document).on('deviceready', function(e) {
+$(document).on('deviceready', function (e) {
 	//initialize our listener when cordova says so
 	new SoftKeyboard();
+	window.keyboard = new SoftKeyboard();
 });
