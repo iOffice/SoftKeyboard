@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="com.ionic.softkeyboard"
+    version="1.0.0">
+    <name>iOS SoftKeyboard Cordova Plugin</name>
+    <description>Quick and dirty Cordova 3.0 plugin for iOS SoftKeyboard events</description>
+    <license>Apache 2.0</license>
+    <keywords>Ionic,keyboard</keywords>
+    <repo>https://github.com/RichardBansal/SoftKeyboard.git</repo>
+    <issue>https://github.com/RichardBansal/SoftKeyboard/issues</issue>
+
+  <js-module src="www/SoftKeyboard.js" name="SoftKeyboard">
+    <clobbers target="cordova.plugins.SoftKeyboard" />
+  </js-module>
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="SoftKeyboard">
+                <param name="ios-package" value="SoftKeyboard" onload="true" />
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/KeyboardPlugin.h"/>
+        <source-file src="src/ios/KeyboardPlugin.m"/>
+    </platform>
+
+</plugin>
